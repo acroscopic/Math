@@ -1,3 +1,5 @@
+# Practice mulitiplying 3 digit numbers
+
 import random
 import operator
 from timeit import default_timer as timer
