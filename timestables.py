@@ -1,3 +1,5 @@
+# Practice times tables up to 14, or higher with simple modification.
+
 import random
 from timeit import default_timer as timer
 import os
@@ -7,8 +9,8 @@ os.system('cls' if os.name == 'nt' else 'clear') #Clearing the screen
 count = 0
 
 while(True):
-	int1 = random.randint(0,10) #picks 2 random numbers
-	int2 = random.randint(1,10)
+	int1 = random.randint(0,14) #picks 2 random numbers
+	int2 = random.randint(1,14)
 
 	answer = (int1 * int2) # multiplies 2 numbers
 	start = timer()
