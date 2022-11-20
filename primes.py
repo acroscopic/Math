@@ -1,3 +1,5 @@
+# This is a script to generate prime numbers as you guess them. Can you get to 100?
+
 import math
 import os
 
