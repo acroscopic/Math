@@ -13,7 +13,6 @@ def lucas_lehmer(p, result_file):
 
     for i in range(p - 2):
         s = (s * s - 2) % m
-        if i % 10 == 0:  # Print at least every 10 iterations
 
     is_prime = s == 0
     # Write the final result to the result file
