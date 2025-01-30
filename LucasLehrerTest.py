@@ -1,3 +1,6 @@
+# This checks if Mersenne numbers are prime by the Lucas Lehrer test.
+# I wrote this program to check run times on a supercomputer
+
 import sys
 import time
 
