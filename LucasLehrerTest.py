@@ -1,5 +1,4 @@
-# This checks if Mersenne numbers are prime by the Lucas Lehrer test.
-# I wrote this program to check run times on a supercomputer
+# I wrote this script to test supercomputer run times
 
 import sys
 import time
@@ -10,10 +9,10 @@ def lucas_lehmer(p, result_file):
         return False
     s = 4
     m = (1 << p) - 1  # Equivalent to 2**p - 1
+    print(f"Testing Mersenne number for 2^{p} - 1")
 
     for i in range(p - 2):
         s = (s * s - 2) % m
-
     is_prime = s == 0
     # Write the final result to the result file
     result_message = f"Mersenne prime test for 2^{p} - 1: {'Prime' if is_prime else 'Not Prime'}\n"
@@ -21,9 +20,9 @@ def lucas_lehmer(p, result_file):
     result_file.flush()  # Ensure immediate writing to result file
     return is_prime
 
-# Given Mersenne number exponent
-# 2^136279841 - 1 Largest known prime number as of 2025
-p = 19937 # A reasonable but not too large Mersenne exponent for debugging
+# Given Mersenne number exponent (use a smaller number for debugging)
+p = 2282
+# p = 136279841 is the largest known prime. This is the goal of the script
 
 # Open result file for final result
 result_file_path = "lucas_lehmer_result.txt"
@@ -31,16 +30,15 @@ result_file_path = "lucas_lehmer_result.txt"
 start_time = time.time()
 
 with open(result_file_path, "a") as result_file:
-    print(f"Starting Lucas-Lehmer test for Mersenne prime 2^{p} - 1...\n")
+    # Run the Lucas-Lehmer test
     is_prime = lucas_lehmer(p, result_file)
 
 end_time = time.time()
 
 elapsed_time = end_time - start_time
-elapsed_time_message = (f"Elapsed time: {elapsed_time:.2f} seconds\n")
-print(elapsed_time_message)
+elapsed_time_message = f"Elapsed time: {elapsed_time:.2f} seconds\n"
+print(elapsed_time_message, end='')
 
-# Write the elapsed time to the result file
 with open(result_file_path, "a") as result_file:
     result_file.write(elapsed_time_message)
     result_file.flush()  # Ensure immediate writing to result file
