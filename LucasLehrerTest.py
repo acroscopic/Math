@@ -20,9 +20,12 @@ def lucas_lehmer(p, result_file):
     result_file.flush()  # Ensure immediate writing to result file
     return is_prime
 
-# Given Mersenne number exponent (use a smaller number for debugging)
+# Given Mersenne number exponent
 p = 2282
-# p = 136279841 is the largest known prime. This is the goal of the script
+
+# p = 136279841 is the largest known prime as of 2025
+# Using this value is not feasible for this program, it would require like 500gb of memory or something crazy
+
 
 # Open result file for final result
 result_file_path = "lucas_lehmer_result.txt"
